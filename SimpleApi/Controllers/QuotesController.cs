@@ -61,7 +61,7 @@ namespace SimpleApi.Controllers
                 var quoteDetails = (from q in context.Quotes
                                     where q.Id == 4
                                     select q).FirstOrDefault();
-                quoteDetails.Quote1 = "UPDATED QUOTE";
+                quoteDetails.Quote1 = "NEW QUOTE";
                 context.SaveChanges();
 
             }
