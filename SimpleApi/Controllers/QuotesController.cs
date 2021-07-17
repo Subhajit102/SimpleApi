@@ -54,12 +54,12 @@ namespace SimpleApi.Controllers
             return quote;
         }
         [HttpPost]
-        public bool updateQuotes()
+        public bool updateQuotes(int id)
         {
             using (var context = new quotesDBContext())
             {
                 var quoteDetails = (from q in context.Quotes
-                                    where q.Id == 4
+                                    where q.Id == id
                                     select q).FirstOrDefault();
                 quoteDetails.Quote1 = "NEW QUOTE";
                 context.SaveChanges();
